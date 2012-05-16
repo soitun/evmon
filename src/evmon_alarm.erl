@@ -28,7 +28,7 @@ handle_call(_Req, State) ->
 	{ok, badreq, State}.
 
 handle_event({set_alarm, Alarm}, State) ->
-	?INFO("alarm raise: ~p", [Alarm]),
+	?ERROR("alarm raise: ~p", [Alarm]),
 	{ok, State};
 
 handle_event({clear_alarm, AlarmId}, State) ->

@@ -1,0 +1,2 @@
+export ERL_LIBS=deps
+erl -pa ebin -config etc/evmon -boot start_sasl -s evmon_app 

@@ -1,0 +1,21 @@
+{application, evmon,
+ [
+  {description, "erlang vm monitor"},
+  {vsn, "1.0"},
+  {modules, [
+		evmon_alarm,
+		evmon_app,
+		evmon_sup,
+		evmon_mem,
+		evmon_proc,
+		evmon_sup		
+  ]},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+				  sasl
+                 ]},
+  {mod, { evmon_app, []}},
+  {env, []}
+ ]}.

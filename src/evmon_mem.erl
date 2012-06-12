@@ -148,7 +148,7 @@ set_mem_limits(State, MemFraction) ->
             M -> M
         end,
     MemLim = get_mem_limit(MemFraction, TotalMemory),
-    ?INFO("Memory limit set to ~pMB of ~pMB total.~n",
+    ?INFO("Memory limit set to ~pMB of ~pMB total.",
                           [trunc(MemLim/?ONE_MB), trunc(TotalMemory/?ONE_MB)]),
     internal_update(State #state { total_memory = TotalMemory,
                                    memory_limit = MemLim }).

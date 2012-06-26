@@ -63,7 +63,7 @@ handle_cast(Msg, State) ->
 
 handle_info({monitor, Pid, long_gc, Info}, State) ->
     ?ERROR("long_gc error: pid=~p, info=~p", [Pid, Info]),
-	case erlang:is_proess_alive(Pid) of
+	case erlang:is_process_alive(Pid) of
 	true ->
 		Info = erlang:process_info(Pid, ?PROC_INFO),
 		?ERROR("long_gc process info: ~n~p", [Info]);
@@ -74,7 +74,7 @@ handle_info({monitor, Pid, long_gc, Info}, State) ->
 
 handle_info({monitor, Pid, large_heap, Info}, State) ->
     ?ERROR("large_heap error: pid=~p, info=~p", [Pid, Info]),
-	case erlang:is_proess_alive(Pid) of
+	case erlang:is_process_alive(Pid) of
 	true ->
 		Info = erlang:process_info(Pid, ?PROC_INFO),
 		?ERROR("large_heap process info: ~n~p", [Info]);

@@ -65,8 +65,8 @@ handle_info({monitor, Pid, long_gc, Info}, State) ->
     ?ERROR("long_gc error: pid=~p, info=~p", [Pid, Info]),
 	case erlang:is_process_alive(Pid) of
 	true ->
-		Info = erlang:process_info(Pid, ?PROC_INFO),
-		?ERROR("long_gc process info: ~n~p", [Info]);
+		PInfo = erlang:process_info(Pid, ?PROC_INFO),
+		?ERROR("long_gc process info: ~n~p", [PInfo]);
 	false ->
 		?ERROR_MSG("long_gc pid '~p' is dead")
 	end,
@@ -76,8 +76,8 @@ handle_info({monitor, Pid, large_heap, Info}, State) ->
     ?ERROR("large_heap error: pid=~p, info=~p", [Pid, Info]),
 	case erlang:is_process_alive(Pid) of
 	true ->
-		Info = erlang:process_info(Pid, ?PROC_INFO),
-		?ERROR("large_heap process info: ~n~p", [Info]);
+		PInfo = erlang:process_info(Pid, ?PROC_INFO),
+		?ERROR("large_heap process info: ~n~p", [PInfo]);
 	false ->
 		?ERROR_MSG("large_heap pid '~p' is dead")
 	end,
